@@ -3,7 +3,7 @@ import networkx as nx
 
 grafo = nx.DiGraph()
 
-print("Hi after inputs I gonna draw an undirected graph!\nPut the number of nodes, edges and the conections.")
+print("Hi after inputs I gonna draw an directed graph!\nPut the number of nodes, edges and the conections.")
 
 n = int(input())
 m = int(input())
