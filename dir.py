@@ -1,27 +1,38 @@
 import matplotlib.pyplot as plt 
 import networkx as nx
 
-grafo = nx.DiGraph()
+def main(n, m):
+    grafo = nx.DiGraph()
 
-print("Hi after inputs I gonna draw an directed graph!\nPut the number of nodes, edges and the conections.")
+    nos = range(n)
 
-n = int(input())
-m = int(input())
+    arestas = []
 
-nos = range(n)
+    for i in range(m):
+        uv = input()
+        u = int(uv[0])
+        v = int(uv[2])
 
-arestas = []
+        arestas.append(tuple([u, v]))
+        
 
-for i in range(m):
-    uv = input()
-    u = int(uv[0])
-    v = int(uv[2])
+    grafo.add_nodes_from(nos)
+    grafo.add_edges_from(arestas)
 
-    arestas.append(tuple([u, v]))
-    
+    nx.draw(grafo, with_labels=True)
+    plt.show()
 
-grafo.add_nodes_from(nos)
-grafo.add_edges_from(arestas)
+if __name__ == '__main__':
+    while True:
+        print("*Hi after inputs I gonna draw an directed graph!*\nIf you want to exit, type 'q', else type the number of nodes and edges.\n>", end=" ")
+        a = input()
+        print("> ", end="")
+        if a == 'q':
+            break
 
-nx.draw(grafo, with_labels=True)
-plt.show()
+        n = int(a)
+        m = int(input())
+        
+        print("Conections.:")
+
+        main(n, m)
