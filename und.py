@@ -23,8 +23,9 @@ def main(n, m):
     plt.show()
 
 if __name__ == '__main__':
+    print("*Hi after inputs I gonna draw an undirected graph!*\nIf you want to exit, type 'q', else type the number of nodes and edges.")   
     while True:
-        print("*Hi after inputs I gonna draw an undirected graph!*\nIf you want to exit, type 'q', else type the number of nodes and edges.\n>", end=" ")
+        print("> ", end="")
         a = input()
         print("> ", end="")
         if a == 'q':
